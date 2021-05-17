@@ -27,7 +27,6 @@ exports.authUser = async (req, res) => {
       },
     };
 
-    //Firmar el jwt
     jwt.sign(
       payload,
       process.env.SECRET_KEY,
@@ -46,10 +45,10 @@ exports.authUser = async (req, res) => {
 };
 
 
-//Gets the authenticated user 
+//Returns authenticated user 
 exports.authenticatedUser = async (req, res) => {
   try {
-    const user = await User.findOne({ where: { email : req.user.email } });
+    const user = await User.findOne({ where: { email : req.user.email }, attributes: {exclude: ['password']} });
     res.json({ user });
   } catch (error) {
     console.log(error);
