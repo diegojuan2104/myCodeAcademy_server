@@ -19,6 +19,7 @@ db.authenticate().then(()=> console.log("DB connected!")).catch(error => console
 
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/challenges', require('./routes/challenges'));
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 

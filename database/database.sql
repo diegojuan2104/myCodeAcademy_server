@@ -1,7 +1,0 @@
-CREATE DATABASE testAPI;
-
-CREATE TABLE users(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    email TEXT
-);
